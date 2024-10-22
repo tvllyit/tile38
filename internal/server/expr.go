@@ -110,11 +110,7 @@ func newExprPool(s *Server) *exprPool {
 			if info.Chain {
 				switch info.Ident {
 				case "match":
-					args, err := info.Args.Compute()
-					if err != nil {
-						return expr.Undefined, err
-					}
-					t := match.Match(info.Value.String(), args.Get(0).String())
+					t := match.Match(info.Value.String(), info.Args.String())
 					return expr.Bool(t), nil
 				}
 			}

@@ -413,7 +413,7 @@ Developer Options:
 	}
 
 	c := make(chan os.Signal, 1)
-	shutdown := make (chan bool, 1)
+	shutdown := make(chan bool, 1)
 
 	signal.Notify(c, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
 	go func() {
